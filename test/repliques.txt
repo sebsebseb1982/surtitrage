@@ -1,0 +1,3 @@
+Bonjour, comment allez-vous ?
+Voici un exemple de surtitrage !
+Qu'en pensez-vous ?\nJ'ai l'impression que ça marche pas mal !
