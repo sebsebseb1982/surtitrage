@@ -54,8 +54,8 @@ export class SurtitrageRoutes implements IRoutable {
                                     document.body.onkeyup = function(e){
                                         const urlParams = new URLSearchParams(window.location.search);
                                         const replique = urlParams.get('replique') ? urlParams.get('replique') : 0; 
-                                        let top = document.getElementById("repliques").style.top ? parseInt(document.getElementById("repliques").style.top, 10) : 0;
-                                        let left = document.getElementById("repliques").style.left ? parseInt(document.getElementById("repliques").style.left, 10) : 0;
+                                        let top = document.getElementById("repliques").style["margin-top"] ? parseInt(document.getElementById("repliques").style["margin-top"], 10) : 0;
+                                        let left = document.getElementById("repliques").style["margin-left"] ? parseInt(document.getElementById("repliques").style["margin-left"], 10) : 0;
                                         let fontSize = document.getElementsByTagName("body")[0].style.fontSize ? parseInt(document.getElementsByTagName("body")[0].style.fontSize, 10) : 30;
                                         if(e.key === 'p' && replique < ${this.repliques.length - 1}){
                                             window.location.href = 'http://localhost:${this.port}/surtitrage?replique=' + new String(parseInt(replique)+1) + '&top=' + top + '&left=' + left + '&fontSize=' + fontSize;
@@ -70,16 +70,16 @@ export class SurtitrageRoutes implements IRoutable {
                                             document.getElementsByTagName("body")[0].style.fontSize = fontSize + 1;
                                         }
                                         else if(e.key === 'ArrowUp'){
-                                            document.getElementById("repliques").style.top = top - 10;
+                                            document.getElementById("repliques").style["margin-top"] = top - 10;
                                         }
                                         else if(e.key === 'ArrowDown'){
-                                            document.getElementById("repliques").style.top = top + 10;
+                                            document.getElementById("repliques").style["margin-top"] = top + 10;
                                         }
                                         else if(e.key === 'ArrowLeft'){
-                                            document.getElementById("repliques").style.left = left - 10;
+                                            document.getElementById("repliques").style["margin-left"] = left - 10;
                                         }
                                         else if(e.key === 'ArrowRight'){
-                                            document.getElementById("repliques").style.left = left + 10;
+                                            document.getElementById("repliques").style["margin-left"] = left + 10;
                                         }
                                         else if(e.key === 'b'){
                                             if(showBorders == true) {
@@ -91,7 +91,7 @@ export class SurtitrageRoutes implements IRoutable {
                                         }
                                     }
                                 </script>
-                                <div id="repliques" style="top: ${this.positionTop}px; left: ${this.positionLeft}px">
+                                <div id="repliques" style="margin-top: ${this.positionTop}px; margin-left: ${this.positionLeft}px">
                                     ${repliqueMiseEnForme}
                                 </div>
                             </body>
