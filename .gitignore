@@ -4,4 +4,6 @@
 node_modules
 src/**/*.js
 
+**/**.txt
+
 npm-debug.log
